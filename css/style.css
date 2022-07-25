@@ -8177,7 +8177,7 @@ h1, h2, h3, h4, h5,
   z-index: 3; }
   @media (max-width: 991.98px) {
     .ftco-navbar-light {
-      background: #000000 !important;
+      background: #fff !important;
       position: relative;
       top: 0; } }
   .ftco-navbar-light .navbar-brand {
@@ -8200,7 +8200,7 @@ h1, h2, h3, h4, h5,
     font-weight: 600;
     opacity: 1 !important; }
     .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
-      color: #96bb7c; }
+      color: #64BB4A; }
     @media (max-width: 991.98px) {
       .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
         padding-left: 0;
@@ -8255,13 +8255,13 @@ h1, h2, h3, h4, h5,
     border: 1px solid #e16262;
     background: #e16262 !important; }
   .ftco-navbar-light .navbar-nav > .nav-item.active > a {
-    color: #96bb7c; }
+    color: #64BB4A; }
   @media (max-width: 991.98px) {
     .ftco-navbar-light .navbar-nav > .nav-item.active > a {
       color: #96bb7c; } }
   .ftco-navbar-light .navbar-toggler {
     border: none;
-    color: rgba(255, 255, 255, 0.5) !important;
+    color: #2b2b2b !important;
     cursor: pointer;
     padding-right: 0;
     text-transform: uppercase;
@@ -8385,11 +8385,11 @@ h1, h2, h3, h4, h5,
 
 .slider-text {
   height: 850px; }
-  .slider-text h1 {
-    font-size: 60px;
-    color: #000000;
+
+.slider-text h1 {
+    font-size: 80px;
+    color: #2b2b2b;
     line-height: 1.1;
-    font-weight: 400;
     position: relative; }
     .slider-text h1:after {
       position: absolute;
@@ -8398,7 +8398,7 @@ h1, h2, h3, h4, h5,
       content: '';
       width: 40px;
       height: 4px;
-      background: #96bb7c; }
+      background: #64BB4A; }
     .slider-text h1 span {
       color: #000000;
       display: block; }
@@ -8611,7 +8611,7 @@ h1, h2, h3, h4, h5,
   .btn:hover, .btn:active, .btn:focus {
     outline: none; }
   .btn.btn-primary {
-    background: #96bb7c !important;
+    background: #64BB4A !important;
     border: 1px solid #96bb7c !important;
     color: #fff !important; }
     .btn.btn-primary:hover {
@@ -9932,3 +9932,8 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+
+.text-bold{
+  font-weight: bold;
+}
