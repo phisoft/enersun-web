@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="107.621" height="104.172" viewBox="0 0 107.621 104.172">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #64bb4a;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        filter: url(#Path_1);
+      }
+    </style>
+    <filter id="Path_1" x="0" y="0.975" width="107.621" height="103.197" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_3" data-name="Group 3" transform="translate(-197.316 -300.895)">
+    <g id="Group_1" data-name="Group 1" transform="translate(206.316 300.934)">
+      <g class="cls-3" transform="matrix(1, 0, 0, 1, -9, -0.04)">
+        <path id="Path_1-2" data-name="Path 1" class="cls-1" d="M1.215,52.806l44.428-7.3s-1.58,20.242,9.39,28.445,34.489,4.369,34.489,4.369L90.836,110.6l-69.1,20.1Z" transform="translate(7.79 -38.53)"/>
+      </g>
+      <rect id="Rectangle_1" data-name="Rectangle 1" class="cls-2" width="20.647" height="5.288" rx="2" transform="translate(20.64 31.218) rotate(-20)"/>
+      <rect id="Rectangle_2" data-name="Rectangle 2" class="cls-2" width="19.205" height="5.288" rx="2" transform="translate(29.746 52.677) rotate(-43)"/>
+      <rect id="Rectangle_3" data-name="Rectangle 3" class="cls-2" width="20.212" height="5.71" rx="2" transform="matrix(0.574, -0.819, 0.819, 0.574, 44.81, 64.618)"/>
+      <rect id="Rectangle_4" data-name="Rectangle 4" class="cls-2" width="19.205" height="4.647" rx="2" transform="matrix(0.242, -0.97, 0.97, 0.242, 65.608, 73.474)"/>
+      <path id="Path_2" data-name="Path 2" class="cls-2" d="M20.647,0a.5.5,0,0,1,.5.5V4.784a.5.5,0,0,1-.5.5H.5c-.278,0-.359-.123-.359-.123L11.13.409Z" transform="translate(20.512 6.009) rotate(14)"/>
+    </g>
+    <path id="Path_3" data-name="Path 3" class="cls-2" d="M43.228,31.9l1.637,40.1S36.241,73.72,31.223,73.72C13.979,73.72,0,62.559,0,48.792c0-1.847.112-4.5.305-6.187s.622-3.733.622-3.733Z" transform="translate(249.797 269)"/>
+    <path id="Path_4" data-name="Path 4" class="cls-1" d="M9.515,0c5.414,0,9.447,7.16,9.447,7.16L0,7.258S4.1,0,9.515,0Z" transform="matrix(0.695, -0.719, 0.719, 0.695, 262.184, 314.83)"/>
+    <path id="Path_5" data-name="Path 5" class="cls-1" d="M4.155,0l7.533,9.863s-3.332,6.4-6,9.117A19.576,19.576,0,0,1,0,22.962Z" transform="matrix(0.819, 0.574, -0.574, 0.819, 289.946, 305.749)"/>
+  </g>
+</svg>
