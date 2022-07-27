@@ -8393,7 +8393,7 @@ h1, h2, h3, h4, h5,
   height: 850px; }
 
 .slider-text h1 {
-    font-size: 80px;
+    /* font-size: 80px; */
     color: #2b2b2b;
     line-height: 1.1;
     position: relative; }
@@ -10036,14 +10036,9 @@ background: #96bb7c;
 }
 
 #cta{
-  /* background: linear-gradient(rgba(242,242,242, 0.8), rgba(242,242,242, 0.9)), url(../images/cta-bg-2.jpg) fixed top center; */
+  background: linear-gradient(rgba(242,242,242, 0.4), rgba(242,242,242, 0.8)), url(../images/cta.jpg) fixed top center;
   background-size: cover;
   padding: 80px 0;
-}
-
-.fs-80{
-  font-family: 'Iskoola Pota';
-  font-size: 80px;
 }
 
 .fs-18{
@@ -10065,4 +10060,59 @@ background: #96bb7c;
 
 .d-grid{
   display: grid;
+}
+
+.text-lg-bold{
+ font-weight: normal; 
+}
+
+@media (min-width:991px) {
+  .text-lg-bold{
+    font-weight: bold;
+  }
+}
+
+.text-black{
+  color: #2b2b2b;
+}
+
+#hero{
+  background-image: url(../images/hero-bg2.jpg);
+  background-position: bottom;
+}
+
+@media (min-width: 991px) {
+  #hero{
+    background-image: url(../images/hero-bg.jpg);
+  }
+}
+
+.pt-6{
+  padding-top: 4.5rem;
+}
+
+.pt-7{
+  padding-top: 6rem;
+}
+
+.pt-8{
+  padding-top: 7.5rem;
+}
+
+.pt-9{
+  padding-top: 9rem;
+}
+
+.pt-10{
+  padding-top: 10.5rem;
+}
+
+.fs-80{
+  font-size: normal;
+}
+
+@media (min-width:991px) {
+  .fs-80{
+    font-size: 80px;
+  }
 }
