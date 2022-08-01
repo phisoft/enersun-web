@@ -9992,7 +9992,7 @@ textarea.form-control {
 
 .box-secondary{
   background-color: #fff;
-  padding: 1vh;
+  padding: 2.5vh;
   /* margin: 1vh; */
   border-radius: 3px;
   box-shadow:   0;
@@ -10146,12 +10146,12 @@ background: #96bb7c;
   padding-top: 10.5rem;
 }
 
-.fs-36{
+.fs-80{
   font-size: normal;
 }
 
-.fs-80{
-  font-size: normal;
+.fs-sm-38{
+  font-size: 38px;
 }
 
 @media (min-width:991px) {
@@ -10160,5 +10160,9 @@ background: #96bb7c;
   }
   .fs-36{
     font-size: 36px;
+  }
+
+  .fs-48{
+    font-size: 48px;
   }
 }
