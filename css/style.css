@@ -8187,7 +8187,7 @@ a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  color: #96bb7c; }
+  color: #666666; }
   a:hover, a:focus {
     text-decoration: none;
     color: #96bb7c;
@@ -10165,4 +10165,24 @@ background: #96bb7c;
   .fs-48{
     font-size: 48px;
   }
+}
+
+.active{
+  color:#64BB4A !important;
+}
+
+.dark{
+  background-color: #F5F5F5
+}
+
+#posts a{
+  color: black;
+}
+
+#posts a:hover{
+  color: #64BB4A ;
+}
+
+.custom-shadow{
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 }
