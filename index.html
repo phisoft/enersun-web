@@ -400,24 +400,26 @@
 					<!-- <a href="#" class="text-white js-filter d-inline-block d-lg-none">Filter</a> -->
 					<div class="filter-wrap">
 						<div class="filter ml-auto d-flex justify-content-between" id="filters">
+							<!--
 							<a href="#" class="active col-1 text-center" data-filter="*">All</a>
 							<a href="#" class="col-1 text-center" data-filter=".led">LED</a>
-							<!-- <a href="#" data-filter=".ledtube">LED Tube</a>
-								<a href="#" data-filter=".leddbulb">LED Bulb</a>
+							<a href="#" data-filter=".ledtube">LED Tube</a>
+							<a href="#" data-filter=".leddbulb">LED Bulb</a>
 							<a href="#" data-filter=".leddownlight">LED Downlight</a>
 							<a href="#" data-filter=".ledfloodlight">LED Flood Light</a>
-							<a href="#" data-filter=".ledhighbaylamp">LED High-Bay Lamp</a> -->
+							<a href="#" data-filter=".ledhighbaylamp">LED High-Bay Lamp</a>
 							<a href="#" class="col-4 text-center" data-filter=".energysavingbulb">Energy Saving Bulb</a>
 							<a href="#" class="col-2 text-center" data-filter=".electrical">Electrical</a>
 							<a href="#" class="col-4 text-center" data-filter=".decorationlamp">Decoration Lamp</a>
+							-->
 						</div>
 					</div>
 				</div>
 				<div id="posts" class="row d-flex justify-content-between">
+					<!--
 					<div class="item led col-sm-6 col-md-6 col-lg-3 mb-3">
 						<div class="custom-shadow">
-							<button type="button" class=" btn bg-white border-0 p-3 btn-secondary" data-toggle="modal"
-								data-target=".bd-product-modal-lg">
+							<button type="button" class=" btn bg-white border-0 p-3 btn-secondary" data-toggle="modal" data-target=".bd-product-modal-lg">
 								<img src="/images/item/led1.png" class="col-11 img-fluid mb-3" alt="Images" />
 								<div class="overlay">
 									<span class="wrap-icon icon-link2"></span>
@@ -429,45 +431,6 @@
 							</button>
 						</div>
 					</div>
-
-
-					<!--START TEMPLATE MODAL FOR POP UP PRODUCT -->
-					<div class="modal fade bd-product-modal-lg" tabindex="-1" role="dialog" aria-labelledby="Modal"
-						aria-hidden="true">
-						<div class="modal-dialog modal-lg">
-							<div class="modal-content p-4">
-								<div>
-									<div class="row d-flex justify-content-between align-content-center">
-										<div class="col-3"><img src="/images/logo-landing-enersun.svg" alt=""></div>
-										<div class="col-1 d-flex align-items-center">
-											<a data-dismiss="modal" type="button" class=""><i
-													class="fa fa-close"></i></a>
-										</div>
-									</div>
-									<hr class=" w-100">
-									<div class="row d-flex justify-content-center align-items-center mt-5 mb-5">
-										<div class="col-lg-5 d-flex align-content-center justify-content-center"><img
-												class="col-7 img-fluid d-flex align-items-center"
-												src="/images/item/led1.png" alt=""></div>
-										<div class="col-lg-6">
-											<h4 class="text-center pt-3 text-bold">LED Bulb 12W – LED B12 120PA65</h4>
-											<h6 class="text-center">LED Bulb</h6>
-											<h4 class="text-center pt-5 text-bold">RM12.00</h4>
-											<hr class=" w-25">
-											<p class="text-justify pt-5 pb-2">The LED light bulb is bright LED lighting
-												with
-												excellent light quality. This bulb is the perfect
-												replacement for your matted traditional bulbs. It is
-												energy saving and instant light when switched on.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!--END TEMPLATE MODAL FOR POP UP PRODUCT -->
-
-
 					<div class="item led col-sm-6 col-md-6 col-lg-3 mb-3">
 						<div class="custom-shadow">
 							<button class="btn bg-white border-0 p-3 btn-secondary">
@@ -570,12 +533,46 @@
 							</button>
 						</div>
 					</div>
-
+					-->
 				</div>
 			</div>
 		</div>
 	</div>
-
+	<!--START TEMPLATE MODAL FOR POP UP PRODUCT -->
+	<div class="modal fade bd-product-modal-lg" tabindex="-1" role="dialog" aria-labelledby="Modal" aria-hidden="true" id="modal">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content p-4">
+				<div>
+					<div class="row d-flex justify-content-between align-content-center">
+					<div class="col-3"><img src="/images/logo-landing-enersun.svg" alt=""></div>
+					<div class="col-1 d-flex align-items-center">
+						<a data-dismiss="modal" type="button" class=""><i
+							class="fa fa-close"></i></a>
+						</div>
+					</div>
+					<hr class=" w-100">
+					<div class="row d-flex justify-content-center align-items-center mt-5 mb-5">
+						<div class="col-lg-5 d-flex align-content-center justify-content-center">
+							<img class="col-7 img-fluid d-flex align-items-center m_img" src="/images/item/led1.png" alt=""></div>
+							<div class="col-lg-6">
+								<h4 class="text-center pt-3 text-bold m_name">LED Bulb 12W – LED B12 120PA65</h4>
+								<h6 class="text-center m_cat">LED Bulb</h6>
+								<h4 class="text-center pt-5 text-bold m_price">RM12.00</h4>
+								<hr class=" w-25">
+							<p class="text-justify pt-5 pb-2 m_desc">
+								The LED light bulb is bright LED lighting with
+								excellent light quality. This bulb is the perfect
+								replacement for your matted traditional bulbs. It is
+								energy saving and instant light when switched on.
+							</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--END TEMPLATE MODAL FOR POP UP PRODUCT -->
 	<section class="ftco-section">
 		<div class="container pt-0 pt-lg-5 pb-0 pb-lg-5">
 			<div class="row ftco-animate justify-content-between align-items-center">
