@@ -385,7 +385,7 @@
 		</div>
 	</section>
 
-	<div class="ftco-section ftco-portfolio dark" id="products">
+	<div class="ftco-section ftco-portfolio dark" id="products" v-scope="store" @vue:mounted="mounted">
 		<div class="container">
 			<div class="col-lg-12 justify-content-center no-gutters py-md-4">
 				<div class="col-md-12 heading-section text-center ftco-animate">
@@ -396,43 +396,30 @@
 			<div id="portfolio-single-holder"></div>
 			<div class="portfolio-wrapper">
 				<div class="d-flex align-items-center justify-content-evenly mb-5 py-md-3">
-					<!-- <h2 class="mr-auto heading-h2"><span class="gsap-reveal">Intern</span></h2> -->
-					<!-- <a href="#" class="text-white js-filter d-inline-block d-lg-none">Filter</a> -->
 					<div class="filter-wrap">
 						<div class="filter ml-auto d-flex justify-content-between" id="filters">
-							<a href="#" class="active col-1 text-center" data-filter="*">All</a>
-							<a href="#" class="col-1 text-center" data-filter=".led">LED</a>
-							<!-- <a href="#" data-filter=".ledtube">LED Tube</a>
-								<a href="#" data-filter=".leddbulb">LED Bulb</a>
-							<a href="#" data-filter=".leddownlight">LED Downlight</a>
-							<a href="#" data-filter=".ledfloodlight">LED Flood Light</a>
-							<a href="#" data-filter=".ledhighbaylamp">LED High-Bay Lamp</a> -->
-							<a href="#" class="col-4 text-center" data-filter=".energysavingbulb">Energy Saving Bulb</a>
-							<a href="#" class="col-2 text-center" data-filter=".electrical">Electrical</a>
-							<a href="#" class="col-4 text-center" data-filter=".decorationlamp">Decoration Lamp</a>
+							<a class="col text-center" v-for="item in store.category">{{item.name}}</a>
 						</div>
 					</div>
 				</div>
 				<div id="posts" class="row d-flex justify-content-between">
-					<div class="item led col-sm-6 col-md-6 col-lg-3 mb-3">
+					<div class=" col-sm-6 col-md-6 col-lg-3 mb-3" v-for="item in store.product">
 						<div class="custom-shadow">
-							<button type="button" class=" btn bg-white border-0 p-3 btn-secondary" data-toggle="modal"
-								data-target=".bd-product-modal-lg">
-								<img src="/images/item/led1.png" class="col-11 img-fluid mb-3" alt="Images" />
+							<button class="btn bg-white border-0 p-3 btn-secondary">
+								<img :src="'data:image/jpeg;base64,' + item.image" class="col-12 mb-3 img-fluid" alt="Images" />
 								<div class="overlay">
 									<span class="wrap-icon icon-link2"></span>
 									<div class="portfolio-item-content">
-										<h6 class="text-bold text-dark">LED Bulb 12W – LED B12 120PA65</h6>
-										<p class="text-primary">RM 12.00</p>
+										<h6 class="text-bold text-dark">{{item.name}}</h6>
+										<p class="text-primary">RM {{item.price}}</p>
 									</div>
 								</div>
 							</button>
 						</div>
 					</div>
-
-
+				</div>
 					<!--START TEMPLATE MODAL FOR POP UP PRODUCT -->
-					<div class="modal fade bd-product-modal-lg" tabindex="-1" role="dialog" aria-labelledby="Modal"
+					<!-- <div class="modal fade bd-product-modal-lg" tabindex="-1" role="dialog" aria-labelledby="Modal"
 						aria-hidden="true">
 						<div class="modal-dialog modal-lg">
 							<div class="modal-content p-4">
@@ -464,114 +451,8 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<!--END TEMPLATE MODAL FOR POP UP PRODUCT -->
-
-
-					<div class="item led col-sm-6 col-md-6 col-lg-3 mb-3">
-						<div class="custom-shadow">
-							<button class="btn bg-white border-0 p-3 btn-secondary">
-								<img src="images/item/led2.png" class="col-11 mb-3 img-fluid" alt="Images" />
-								<div class="overlay">
-									<span class="wrap-icon icon-link2"></span>
-									<div class="portfolio-item-content">
-										<h6 class="text-bold text-dark">LED TUBE – LED T8 10W</h6>
-										<p class="text-primary">RM 8.00</p>
-									</div>
-								</div>
-							</button>
-						</div>
-					</div>
-					<div class="item led col-sm-6 col-md-6 col-lg-3 mb-3">
-						<div class="custom-shadow">
-							<button class="btn bg-white border-0 p-3 btn-secondary">
-								<img src="images/item/led3.png" class="mb-3 col-11 img-fluid" alt="Images" />
-								<div class="overlay">
-									<span class="wrap-icon icon-link2"></span>
-									<div class="portfolio-item-content">
-										<h6 class="text-bold text-dark">LED DOWNLIGHT – THB – 12W/18W – CLC</h6>
-										<p class="text-primary">RM 26.00 – RM 41.90</p>
-									</div>
-								</div>
-							</button>
-						</div>
-					</div>
-					<div class="item led col-sm-6 col-md-6 col-lg-3 mb-3">
-						<div class="custom-shadow">
-							<button class="btn bg-white border-0 p-3 btn-secondary">
-								<img src="images/item/led4.png" class="mb-3 col-11 img-fluid" alt="Images" />
-								<div class="overlay">
-									<span class="wrap-icon icon-link2"></span>
-									<div class="portfolio-item-content">
-										<h6 class="text-bold text-dark">LED FLOOD LIGHT 100W – Economical Series</h6>
-										<p class="text-primary">RM 158.00 – RM 208.00</p>
-									</div>
-								</div>
-							</button>
-						</div>
-					</div>
-					<div class="item led col-sm-6 col-md-6 col-lg-3 mb-3">
-						<div class="custom-shadow">
-							<button class="btn bg-white border-0 p-3 btn-secondary">
-								<img src="images/item/led5.png" class="mb-3 col-11 img-fluid" alt="Images" />
-								<div class="overlay">
-									<span class="wrap-icon icon-link2"></span>
-									<div class="portfolio-item-content">
-										<h6 class="text-bold text-dark">LED HIGH-BAY LAMP 100W/150W/200W/240W – GL UFO
-											Series</h6>
-										<p class="text-primary">RM 550.00 – RM 850.00</p>
-									</div>
-								</div>
-							</button>
-						</div>
-					</div>
-					<div class="item energysavingbulb col-sm-6 col-md-6 col-lg-3 mb-3">
-						<div class="custom-shadow">
-							<button class="btn bg-white border-0 p-3 btn-secondary">
-								<img src="images/item/energysavingbulb1.png" class="mb-3 col-11 img-fluid"
-									alt="Images" />
-								<div class="overlay">
-									<span class="wrap-icon icon-link2"></span>
-									<div class="portfolio-item-content">
-										<h6 class="text-bold text-dark">Energy Saving Bulb – Spiral 24W E27</h6>
-										<p class="text-primary">RM 9.50</p>
-									</div>
-								</div>
-							</button>
-						</div>
-					</div>
-					<div class="item electrical col-sm-6 col-md-6 col-lg-3 mb-3">
-						<div class="custom-shadow">
-							<button class="btn bg-white border-0 p-3 btn-secondary">
-								<img src="images/item/electrical1.jpg" class="mb-3 col-11 img-fluid" alt="Images" />
-								<div class="overlay">
-									<span class="wrap-icon icon-link2"></span>
-									<div class="portfolio-item-content">
-										<h6 class="text-bold text-dark">SET OF 4 / 3 LED Track Light 7W/12W/20W + 1Meter
-											Track Rail/ COB LED Track Light
-											/ Warm white / Daylight</h6>
-										<p class="text-primary">RM 56.00 – RM 75.50</p>
-									</div>
-								</div>
-							</button>
-						</div>
-					</div>
-					<div class="item decorationlamp col-sm-6 col-md-6 col-lg-3 mb-3">
-						<div class="custom-shadow">
-							<button class="btn bg-white border-0 p-3 btn-secondary">
-								<img src="images/item/decorationlamp1.jpg" class="mb-3 col-11 img-fluid" alt="Images" />
-								<div class="overlay">
-									<span class="wrap-icon icon-link2"></span>
-									<div class="portfolio-item-content">
-										<h6 class="text-bold text-dark">Flexible Neon Strip Light</h6>
-										<p class="text-primary">RM 15.00 – RM 1,500.00</p>
-									</div>
-								</div>
-							</button>
-						</div>
-					</div>
-
-				</div>
 			</div>
 		</div>
 	</div>
@@ -945,7 +826,46 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 	<script src="js/google-map.js"></script>
 	<script src="js/main.js"></script>
+  	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  	<script type="module">
+		import { createApp, reactive } from 'https://unpkg.com/petite-vue?module'
+		const store = reactive({
+			count: '',
+			product: await getProduct(),
+			category: await getCategory(),
+			mounted(){
+				// await getProduct()
+			}
+		})
+		async function request(path, params) {
+			const headers = {
+			headers: {
+				Accept: 'application/json'
+			}
+			}
+			const apiUrl = 'http://localhost:8069' + path
+			const res = await axios.post(apiUrl, { jsonrpc: '2.0', params }, headers)
+			return res.data.result
+      	}
 
+		async function getDetails() {
+			return request('/enersun/categories/products', {})
+		}
+
+		async function getProduct() {
+			const product = await getDetails();
+			return product.product;
+		}
+
+		async function getCategory() {
+			const product = await getDetails();
+			return product.category;
+		}
+	  
+		createApp({
+		  store
+		}).mount()
+	</script>
 </body>
 
 </html>

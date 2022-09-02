@@ -10174,7 +10174,9 @@ background: #96bb7c;
 .dark{
   background-color: #F5F5F5
 }
-
+#posts {
+  height: auto !important;
+}
 #posts a{
   color: black;
 }
