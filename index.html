@@ -843,7 +843,7 @@
 				Accept: 'application/json'
 			}
 			}
-			const apiUrl = 'http://localhost:8069' + path
+			const apiUrl = 'https://enersun.bah.my' + path
 			const res = await axios.post(apiUrl, { jsonrpc: '2.0', params }, headers)
 			return res.data.result
       	}
