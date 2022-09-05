@@ -394,11 +394,14 @@
 				</div>
 			</div>
 			<div id="portfolio-single-holder"></div>
+			<div class="text-center" v-if="loading">
+				<div class="spinner-border" role="status"></div>
+			</div>
 			<div class="portfolio-wrapper">
 				<div class="d-flex align-items-center justify-content-evenly mb-5 py-md-3">
 					<div class="filter-wrap">
 						<div class="filter ml-auto d-flex justify-content-between" id="filters">
-							<a class="col text-center" v-for="item in store.category">{{item.name}}</a>
+							<a class="col text-center" v-for="item in store.category">{{ item.name }}</a>
 						</div>
 					</div>
 				</div>
@@ -828,6 +831,8 @@
 	<script src="js/main.js"></script>
   	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   	<script type="module">
+		$('.portfolio-wrapper').css('opacity', '0');
+
 		import { createApp, reactive } from 'https://unpkg.com/petite-vue?module'
 		const store = reactive({
 			count: '',
@@ -835,6 +840,7 @@
 			category: await getCategory(),
 			mounted(){
 				// await getProduct()
+				$('.portfolio-wrapper').css('opacity', '1');
 			}
 		})
 		async function request(path, params) {
@@ -861,9 +867,9 @@
 			const product = await getDetails();
 			return product.category;
 		}
-	  
+
 		createApp({
-		  store
+		  	store
 		}).mount()
 	</script>
 </body>
