@@ -409,7 +409,8 @@
 					<div class=" col-sm-6 col-md-6 col-lg-3 mb-3" v-for="item in store.product">
 						<div class="custom-shadow">
 							<button class="btn bg-white border-0 p-3 btn-secondary">
-								<img :src="'data:image/jpeg;base64,' + item.image" class="col-12 mb-3 img-fluid" alt="Images" />
+								<img v-if = "item.image == ''" src="/images/item/no_product_img.png" class="col-12 mb-3 img-fluid" alt="Images" />
+								<img v-else :src="'data:image/jpeg;base64,' + item.image" class="col-12 mb-3 img-fluid" alt="Images" />
 								<div class="overlay">
 									<span class="wrap-icon icon-link2"></span>
 									<div class="portfolio-item-content">
