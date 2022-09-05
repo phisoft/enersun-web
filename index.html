@@ -394,7 +394,7 @@
 				</div>
 			</div>
 			<div id="portfolio-single-holder"></div>
-			<div class="text-center" v-if="loading">
+			<div class="loading text-center">
 				<div class="spinner-border" role="status"></div>
 			</div>
 			<div class="portfolio-wrapper">
@@ -842,6 +842,7 @@
 			mounted(){
 				// await getProduct()
 				$('.portfolio-wrapper').css('opacity', '1');
+				$(".loading").remove();
 			}
 		})
 		async function request(path, params) {
