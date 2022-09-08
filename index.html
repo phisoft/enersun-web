@@ -871,6 +871,16 @@
 		var modalWrap = null;
 		function popupProductDetail(index) {
 
+			var product_image = `data:image/jpeg;base64,${store.product[index].image}`
+			var no_product_image = "/images/item/no_product_img.png";
+
+			var image;
+			if (store.product[index].image == '') {
+				image = no_product_image;
+			} else {
+				image = product_image;
+			}
+
 			if (modalWrap !== null) {
 				modalWrap.remove();
 			}
@@ -890,7 +900,7 @@
 								<hr class=" w-100">
 								<div class="row d-flex justify-content-center align-items-center mt-5 mb-5">
 									<div class="col-lg-5 d-flex align-content-center justify-content-center">
-										<img :src="" class="col-7 img-fluid d-flex align-items-center" alt="Images">
+										<img src="${image}" class="col-7 img-fluid d-flex align-items-center" alt="Images">
 									</div>
 									<div class="col-lg-6">
 										<h4 class="text-center pt-3 text-bold">${store.product[index].name}</h4>
