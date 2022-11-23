@@ -397,7 +397,7 @@
 				<div class="d-flex align-items-center justify-content-evenly mb-5 py-md-3">
 					<div class="filter-wrap">
 						<div class="filter ml-auto d-flex justify-content-between" id="filters">
-							<a class="col text-center" v-for="item in store.category">{{ item.name }}</a>
+							<a class="col text-center" v-for="(item, index) in store.category" @click="showProductByCategory(index)">{{ item.name }}</a>
 						</div>
 					</div>
 				</div>
@@ -835,10 +835,10 @@
 		import { createApp, reactive } from 'https://unpkg.com/petite-vue?module'
 		const store = reactive({
 			count: '',
-			product: await getProduct(),
+			product: {},
 			category: await getCategory(),
 			mounted(){
-				// await getProduct()
+				getProduct('All');
 				$('.portfolio-wrapper').css('opacity', '1');
 				$(".loading").remove();
 			}
@@ -849,23 +849,98 @@
 				Accept: 'application/json'
 			}
 			}
-			const apiUrl = 'https://wms.enersun.com.my' + path
+			const apiUrl = 'https://wms.enersun.com.my' + path // http://localhost:8069 OR https://wms.enersun.com.my
 			const res = await axios.post(apiUrl, { jsonrpc: '2.0', params }, headers)
 			return res.data.result
       	}
 
-		async function getDetails() {
-			return request('/enersun/categories/products', {})
+		async function getDetails(product_category) {
+			return request('/enersun/categories/products', {product_category: product_category})
 		}
 
-		async function getProduct() {
-			const product = await getDetails();
+		async function getProduct(category) {
+			const product = await getDetails(category);
+			store.product = product.product;
 			return product.product;
 		}
 
 		async function getCategory() {
 			const product = await getDetails();
 			return product.category;
+		}
+
+		async function showProductByCategory(index){
+			var category_selected = `${store.category[index].name}`
+			console.log("Category selected:", category_selected)
+
+			await getProduct(category_selected);
+			console.log("Total product in this category:", store.product.length)
+			
+			var product_count = 0;
+
+			var product_image = `data:image/jpeg;base64,${store.product[product_count].image}`
+			var no_product_image = "/images/item/no_product_img.png";
+			var image;
+			if (store.product[product_count].image == '') {
+				image = no_product_image;
+			} else {
+				image = product_image;
+			}
+
+			var products = document.getElementById("posts");
+			products.innerHTML = `
+				<div id="by_cat" class="col-sm-6 col-md-6 col-lg-3 mb-3">
+					<div class="custom-shadow">
+						<button class="btn bg-white border-0 p-3 btn-secondary">
+							<img src="${image}" class="col-12 mb-3 img-fluid" alt="Images" />
+							<div class="overlay">
+								<span class="wrap-icon icon-link2"></span>
+								<div class="portfolio-item-content">
+									<h6 class="text-bold text-dark">${store.product[product_count].name}</h6>
+									<p class="text-primary">${store.product[product_count].category_name}</p>
+								</div>
+							</div>
+						</button>
+					</div>
+				</div>
+				<div id="posts"></div>
+			`
+
+			for (let i = 1; i < store.product.length; i++) {
+
+				product_count ++;
+
+				product_image = `data:image/jpeg;base64,${store.product[product_count].image}`
+				if (store.product[product_count].image == '') {
+					image = no_product_image;
+				} else {
+					image = product_image;
+				}
+
+				var products = document.getElementById("posts");
+				products.innerHTML += `
+					<div class="col-sm-6 col-md-6 col-lg-3 mb-3" onclick="popupProductDetail()">
+						<div class="custom-shadow">
+							<button class="btn bg-white border-0 p-3 btn-secondary">
+								<img src="${image}" class="col-12 mb-3 img-fluid" alt="Images" />
+								<div class="overlay">
+									<span class="wrap-icon icon-link2"></span>
+									<div class="portfolio-item-content">
+										<h6 class="text-bold text-dark">${store.product[product_count].name}</h6>
+										<p class="text-primary">${store.product[product_count].category_name}</p>
+									</div>
+								</div>
+							</button>
+						</div>
+					</div>
+					<div id="posts"></div>
+				`
+			}
+
+			var product = document.getElementById('by_cat');
+			product.addEventListener('click', function (e) { 
+				popupProductDetail('0');
+			}, false);
 		}
 
 		var modalWrap = null;
@@ -923,6 +998,7 @@
 
 		createApp({
 		  	store,
+			showProductByCategory,
 			popupProductDetail
 		}).mount()
 	</script>
