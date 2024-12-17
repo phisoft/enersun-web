@@ -8421,7 +8421,6 @@ h1, h2, h3, h4, h5,
   background: -ms-linear-gradient(45deg, black 0%, white 100%);
   background: linear-gradient(45deg, black 0%, white 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#ffffff', GradientType=1 );
-  height: 850px;
 }
 .hero-wrap.hero-wrap-2 {
   height: 600px !important;
@@ -9227,7 +9226,7 @@ textarea.form-control {
 .user-img {
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center; }
+  background-position: -13em center; }
 
 .portfolio-wrap {
   display: block;
