@@ -23,7 +23,7 @@
 	<!-- START nav -->
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="navbar">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="index.html"><img src="/images/enersun-logo.svg" alt="enersun-logo"></a>
+			<a class="navbar-brand" href="index.html"><img src="/images/item/logo-enersun-web.png" alt="enersun-logo" style= "width: 180px; height: auto;"></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
 				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
@@ -59,24 +59,33 @@
 	<!-- END nav -->
 
 	<section class="hero-wrap" id="hero" data-stellar-background-ratio="0.6">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row no-gutters slider-text align-items-center">
-				<div class="col-md-10 col-lg-7 ftco-animate d-flex align-items-end pt-10 pt-lg-0">
-					<div class="text">
-						<h1 class="text-bold fs-80">ENERSUN</h1>
-						<h2 class="mb-4">Save Energy, <span>Save Earth</span>, Love All Serve All</h2>
-						<div class="d-flex meta">
-							<div class="shadow-sm rounded">
-								<p class="mb-0"><a href="#about"
-										class="btn btn-primary py-3 px-2 px-md-4 text-bold">Explore</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center">
+                <div class="col-md-10 col-lg-7 d-flex align-items-end pt-10 pt-lg-0">
+                    <div class="text">
+                        <h1 class="text-bold fs-80" style="color: aliceblue;">ENERSUN</h1>
+                        <h2 class="mb-4" style="color: aliceblue;">Save Energy, <span>Save Earth</span>, Love All Serve All</h2>
+                        <div class="d-flex meta">
+                            <div class="shadow-sm rounded">
+                                <p class="mb-0"><a href="#about" class="btn btn-primary py-3 px-2 px-md-4 text-bold">Explore</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Banner Images -->
+        <div class="banner-slider">
+            <img src="images/Banner1.jpeg" class="banner active" alt="Banner 1">
+            <img src="images/Banner2.jpeg" class="banner" alt="Banner 2">
+            <img src="images/Banner3.jpeg" class="banner" alt="Banner 3">
+            <img src="images/Banner4.jpeg" class="banner" alt="Banner 4">
+            <img src="images/Banner5.jpeg" class="banner" alt="Banner 5">
+            <img src="images/Banner6.jpeg" class="banner" alt="Banner 6">
+        </div>
+    </section>
 	<!-- <section class="ftco-section ftco-no-pb ftco-no-pt bg-primary">
 		<div class="container">
 			<div class="row d-flex no-gutters">
@@ -162,7 +171,7 @@
 							consignment testing by laboratory SIRIM QAS International Berhad.</p>
 					</div>
 				</div>
-				<div class="col-md-5 img js-fullheight" style="background-image: url(/images/about.png);">
+				<div class="col-md-5 img js-fullheight" style="background-image: url(/images/Enersun-Office.jpeg);">
 				</div>
 
 			</div>
@@ -935,6 +944,29 @@
 			showProductByCategory,
 			popupProductDetail
 		}).mount()
+	</script>
+<script>	
+		document.addEventListener("DOMContentLoaded", function () {
+			const banners = document.querySelectorAll(".banner");
+			let currentBannerIndex = 0;
+
+			function showNextBanner() {
+				// Remove "active" class from the current banner
+				banners[currentBannerIndex].classList.remove("active");
+
+				// Move to the next banner (loop back to start if necessary)
+				currentBannerIndex = (currentBannerIndex + 1) % banners.length;
+
+				// Add "active" class to the next banner
+				banners[currentBannerIndex].classList.add("active");
+			}
+
+			// Initialize the first banner as active
+			banners[currentBannerIndex].classList.add("active");
+
+			// Change banner every 5 seconds (5000 milliseconds)
+			setInterval(showNextBanner, 5000);
+		});
 	</script>
 </body>
 
