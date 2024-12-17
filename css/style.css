@@ -3452,7 +3452,11 @@ input[type="button"].btn-block {
     align-items: center;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between; }
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.6);
+    height: 80px;
+    border-radius: 10px;
+  }
 
 .navbar-brand {
   display: inline-block;
@@ -8382,42 +8386,10 @@ h1, h2, h3, h4, h5,
   font-weight: 900;
   font-size: 20px; }
 
-/* .hero-wrap {
-  width: 100%;
-  height: 850px;
-  position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  z-index: 0; }
-  @media (max-width: 991.98px) {
-    .hero-wrap {
-      background-position: top center !important; } }
-  .hero-wrap .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    content: '';
-    opacity: .1;
-    background: #21243d;
-    background: black;
-    background: -moz-linear-gradient(45deg, black 0%, white 100%);
-    background: -webkit-gradient(left bottom, right top, color-stop(0%, black), color-stop(100%, white));
-    background: -webkit-linear-gradient(45deg, black 0%, white 100%);
-    background: -o-linear-gradient(45deg, black 0%, white 100%);
-    background: -ms-linear-gradient(45deg, black 0%, white 100%);
-    background: linear-gradient(45deg, black 0%, white 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#ffffff', GradientType=1 );
-    height: 850px; } */
-
-  
-
 /* Hero Section */
 .hero-wrap {
   width: 100%;
-  height: 850px;
+  height: 42em;
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
@@ -8481,20 +8453,6 @@ h1, h2, h3, h4, h5,
 
 .hero-wrap.hero-wrap-2 .slider-text h1:after {
   display: none;
-}
-
-/* Hero Section Background */
-#hero {
-  /* background-image: url(../images/hero-bg2.jpg); */
-  background-position: bottom;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-@media (min-width: 991px) {
-  #hero {
-      /* background-image: url(../images/Banner1.jpeg); */
-  }
 }
 
 /* Banner Slider for Multiple Banners with Zoom Effect */
