@@ -8229,7 +8229,7 @@ h1, h2, h3, h4, h5,
     .ftco-navbar-light .navbar-nav {
       padding-bottom: 10px; } }
   .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
-    font-size: 15px;
+    font-size: 19px;
     padding-top: .9rem;
     padding-bottom: .9rem;
     padding-left: 20px;
@@ -8389,7 +8389,7 @@ h1, h2, h3, h4, h5,
 /* Hero Section */
 .hero-wrap {
   width: 100%;
-  height: 42em;
+  height: 100vh;
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
@@ -8454,7 +8454,6 @@ h1, h2, h3, h4, h5,
   display: none;
 }
 
-/* Banner Slider for Multiple Banners with Zoom Effect */
 .banner-slider {
   position: absolute;
   top: 0;
@@ -8463,6 +8462,7 @@ h1, h2, h3, h4, h5,
   height: 100%;
   z-index: -1;
   overflow: hidden;
+  background: transparent;
 }
 
 /* Apply the banner styles */
@@ -8471,61 +8471,65 @@ h1, h2, h3, h4, h5,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 1s ease-out; /* Smooth transition for opacity */
-  opacity: 0; /* Make sure banners are hidden initially */
-  animation: fadeLoop 12s infinite, zoomOut 6s ease-in-out infinite; /* Loop animation */
+  transition: opacity 6s ease-out;
+  opacity: 0;
+  z-index: 0;
 }
 
 /* Make the active banner visible */
 .banner.active {
   opacity: 1; /* Display the active banner */
+  z-index: 1;
 }
 
- /* Specific delays for each image in the loop */
 .banner-slider img:nth-child(1) {
+  animation: fadeLoop 36s infinite;
   animation-delay: 0s;
 }
 
 .banner-slider img:nth-child(2) {
-  animation-delay: 3s;
+  animation: fadeLoop 36s infinite;
+  animation-delay: 6s;
 }
 
 .banner-slider img:nth-child(3) {
-  animation-delay: 6s;
-}
-.banner-slider img:nth-child(4) {
-  animation-delay: 9s;
-}
-
-.banner-slider img:nth-child(5) {
+  animation: fadeLoop 36s infinite;
   animation-delay: 12s;
 }
 
-.banner-slider img:nth-child(6) {
-  animation-delay: 15s;
+.banner-slider img:nth-child(4) {
+  animation: fadeLoop 36s infinite;
+  animation-delay: 18s;
 }
 
-/* Zoom-out Animation */
+.banner-slider img:nth-child(5) {
+  animation: fadeLoop 36s infinite;
+  animation-delay: 24s;
+}
+
+.banner-slider img:nth-child(6) {
+  animation: fadeLoop 36s infinite;
+  animation-delay: 30s;
+}
+
+@keyframes fadeLoop {
+  0%, 16.66% {
+    opacity: 1;
+  }
+  16.66%, 50% {
+    opacity: 0;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
 @keyframes zoomOut {
   0% {
     transform: scale(1.1);
   }
   100% {
     transform: scale(1);
-    /* filter: brightness(0.6); */
-  }
-}
-
-/* Fade-in and fade-out keyframes */
-@keyframes fadeLoop {
-  0%, 25% {
-    opacity: 1;
-    z-index: 1;
-    filter: brightness(1);
-  }
-  30%, 100% {
-    opacity: 0;
-    z-index: 0;
   }
 }
 
@@ -8548,14 +8552,6 @@ h1, h2, h3, h4, h5,
     color: #2b2b2b;
     line-height: 1.1;
     position: relative; }
-    .slider-text h1:after {
-      position: absolute;
-      top: -5px;
-      left: 5px;
-      content: '';
-      width: 40px;
-      height: 4px;
-      background: #64BB4A; }
     .slider-text h1 span {
       color: #000000;
       display: block; }
