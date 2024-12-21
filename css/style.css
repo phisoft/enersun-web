@@ -10308,3 +10308,10 @@ background: #96bb7c;
   object-fit: cover;
 
 }
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    background-color: #fff;
+    text-align: center;
+  }
+}
