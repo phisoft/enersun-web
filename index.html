@@ -946,26 +946,28 @@
 			popupProductDetail
 		}).mount()
 	</script>
-<script>	
+	<script>	
 		document.addEventListener("DOMContentLoaded", function () {
 			const banners = document.querySelectorAll(".banner");
 			let currentBannerIndex = 0;
 
 			function showNextBanner() {
-				// Remove "active" class from the current banner
-				banners[currentBannerIndex].classList.remove("active");
-
-				// Move to the next banner (loop back to start if necessary)
-				currentBannerIndex = (currentBannerIndex + 1) % banners.length;
-
-				// Add "active" class to the next banner
-				banners[currentBannerIndex].classList.add("active");
+				const nextBannerIndex = (currentBannerIndex + 1) % banners.length;
+				
+				banners[nextBannerIndex].style.zIndex = 1;
+				banners[currentBannerIndex].style.zIndex = 2;
+				
+				banners[nextBannerIndex].classList.add("active");
+				
+				setTimeout(() => {
+					banners[currentBannerIndex].classList.add("prev");
+					banners[currentBannerIndex].classList.remove("active");
+					currentBannerIndex = nextBannerIndex;
+				}, 1000);
 			}
 
-			// Initialize the first banner as active
 			banners[currentBannerIndex].classList.add("active");
 
-			// Change banner every 5 seconds (5000 milliseconds)
 			setInterval(showNextBanner, 5000);
 		});
 	</script>
