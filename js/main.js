@@ -1,6 +1,8 @@
 jQuery(function($) {
 	"use strict";
 
+
+	if ($(window).width() > 991.98) {
 	$(window).stellar({
     responsive: true,
     parallaxBackgrounds: true,
@@ -9,6 +11,7 @@ jQuery(function($) {
     hideDistantElements: false,
     scrollProperty: 'scroll'
   });
+}
 
 
 	var fullHeight = function() {
