@@ -915,28 +915,23 @@
 	</script>
 	<script>	
 		document.addEventListener("DOMContentLoaded", function () {
-			const banners = document.querySelectorAll(".banner");
-			let currentBannerIndex = 0;
+    const banners = document.querySelectorAll(".banner");
+    let currentBannerIndex = 0;
 
-			function showNextBanner() {
-				const nextBannerIndex = (currentBannerIndex + 1) % banners.length;
-				
-				banners[nextBannerIndex].style.zIndex = 1;
-				banners[currentBannerIndex].style.zIndex = 2;
-				
-				banners[nextBannerIndex].classList.add("active");
-				
-				setTimeout(() => {
-					banners[currentBannerIndex].classList.add("prev");
-					banners[currentBannerIndex].classList.remove("active");
-					currentBannerIndex = nextBannerIndex;
-				}, 1000);
-			}
+    function showNextBanner() {
+        const nextBannerIndex = (currentBannerIndex + 1) % banners.length;
 
-			banners[currentBannerIndex].classList.add("active");
+        banners[currentBannerIndex].classList.remove("active");
+        banners[currentBannerIndex].style.zIndex = 0;
+        banners[nextBannerIndex].classList.add("active");
+        banners[nextBannerIndex].style.zIndex = 1;
+        currentBannerIndex = nextBannerIndex;
+    }
+    banners[currentBannerIndex].classList.add("active");
+    banners[currentBannerIndex].style.zIndex = 1;
+    setInterval(showNextBanner, 5000);
+});
 
-			setInterval(showNextBanner, 5000);
-		});
 	</script>
 </body>
 
