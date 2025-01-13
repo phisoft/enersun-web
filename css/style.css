@@ -10333,3 +10333,19 @@ background: #96bb7c;
       overflow-x: hidden;
   }
 }
+
+.category-icon {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 95%;
+  transition: border 0.05s ease;
+}
+
+.category-icon.selected {
+  border: 3.5px solid #96bb7c;
+}
+
+.category-icon.unselected {
+  border: none;
+}

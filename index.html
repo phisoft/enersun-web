@@ -386,7 +386,35 @@
 				<div class="d-flex align-items-center justify-content-evenly mb-5 py-md-3">
 					<div class="filter-wrap">
 						<div class="filter ml-auto d-flex justify-content-between" id="filters">
-							<a class="col text-center" v-for="(item, index) in store.category" @click="showProductByCategory(index)">{{ item.name }}</a>
+							<div
+								class="category-item text-center mx-3"
+								v-for="(item, index) in store.category"
+								:key="item.id"
+								@click="showProductByCategory(index)"
+								style="cursor: pointer;"
+							>
+								<!-- Category Image -->
+								<img
+									v-if="item.category_icon"
+									:src="'data:image/jpeg;base64,' + item.category_icon"
+									alt="Category Icon"
+									class="category-icon img-fluid mb-2"
+									:class="{
+										selected: store.selectedCategory === item.name,
+										unselected: store.selectedCategory !== item.name
+									  }"
+								/>
+								<img
+									v-else
+									src="/images/item/no_product_img.png"
+									alt="Default Category Image"
+									class="category-icon img-fluid mb-2"
+									:class="{
+										selected: store.selectedCategory === item.name,
+										unselected: store.selectedCategory !== item.name
+									  }"
+								/>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -795,10 +823,12 @@
 		$('.portfolio-wrapper').css('opacity', '0');
 
 		import { createApp, reactive } from 'https://unpkg.com/petite-vue?module'
+		// For any reactivity dependent variables, declare inside here.
 		const store = reactive({
 			count: '',
 			product: {},
 			category: await getCategory(),
+			selectedCategory: null,
 			mounted(){
 				getProduct('All');
 				$('.portfolio-wrapper').css('opacity', '1');
@@ -831,12 +861,18 @@
 			return product.category;
 		}
 
-		async function showProductByCategory(index){
-			var category_selected = `${store.category[index].name}`
-			console.log("Category selected:", category_selected)
-
-			await getProduct(category_selected);
-			console.log("Total product in this category:", store.product.length)
+		async function showProductByCategory(index) {
+			const category_selected = `${store.category[index].name}`;
+			//Check if the same category is clicked
+			if (store.selectedCategory === category_selected) {
+				// Reset to show all products
+				store.selectedCategory = null;
+				await getProduct("All");
+			} else {
+				// Show products for the selected category
+				store.selectedCategory = category_selected;
+				await getProduct(category_selected);
+			}
 		}
 
 		var modalWrap = null;
