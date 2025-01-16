@@ -398,39 +398,35 @@
 				<div class="spinner-border" role="status"></div>
 			</div>
 			<div class="portfolio-wrapper">
-				<div class="d-flex align-items-center justify-content-evenly mb-5 py-md-3">
-					<div class="filter-wrap">
-						<div class="filter ml-auto d-flex justify-content-between" id="filters">
-							<div
-								class="category-item text-center mx-3"
-								v-for="(item, index) in store.category"
-								:key="item.id"
-								@click="showProductByCategory(index)"
-								style="cursor: pointer;"
-							>
-								<!-- Category Image -->
-								<img
-									v-if="item.category_icon"
-									:src="'data:image/jpeg;base64,' + item.category_icon"
-									alt="Category Icon"
-									class="category-icon img-fluid mb-2"
-									:class="{
-										selected: store.selectedCategory === item.name,
-										unselected: store.selectedCategory !== item.name
-									  }"
-								/>
-								<img
-									v-else
-									src="/images/item/no_product_img.png"
-									alt="Default Category Image"
-									class="category-icon img-fluid mb-2"
-									:class="{
-										selected: store.selectedCategory === item.name,
-										unselected: store.selectedCategory !== item.name
-									  }"
-								/>
-							</div>
-						</div>
+				<div class="category-container" id="filters">
+					<div
+						class="category-item"
+						v-for="(item, index) in store.category"
+						:key="item.id"
+						@click="showProductByCategory(index)"
+						style="cursor: pointer;"
+					>
+						<!-- Category Image -->
+						<img
+							v-if="item.category_icon"
+							:src="'data:image/jpeg;base64,' + item.category_icon"
+							alt="Category Icon"
+							class="category-icon img-fluid"
+							:class="{
+								selected: store.selectedCategory === item.name,
+								unselected: store.selectedCategory !== item.name
+								}"
+						/>
+						<img
+							v-else
+							src="/images/item/no_product_img.png"
+							alt="Default Category Image"
+							class="category-icon img-fluid mb-2"
+							:class="{
+								selected: store.selectedCategory === item.name,
+								unselected: store.selectedCategory !== item.name
+								}"
+						/>
 					</div>
 				</div>
 				<div id="posts" class="row d-flex">
