@@ -429,7 +429,7 @@
 						/>
 					</div>
 				</div>
-				<div id="posts" class="row d-flex">
+				<div v-if="store.selectedCategory" id="posts" class="row d-flex">
 					<div class="col-sm-6 col-md-6 col-lg-3 mb-3" v-for="(item, index) in store.product" data-toggle="modal" @click="popupProductDetail(index)">
 						<div class="custom-shadow">
 							<button class="btn bg-white border-0 p-3 btn-secondary">
@@ -854,7 +854,6 @@
 			category: await getCategory(),
 			selectedCategory: null,
 			mounted(){
-				getProduct('All');
 				$('.portfolio-wrapper').css('opacity', '1');
 				$(".loading").remove();
 			}
@@ -889,9 +888,9 @@
 			const category_selected = `${store.category[index].name}`;
 			//Check if the same category is clicked
 			if (store.selectedCategory === category_selected) {
-				// Reset to show all products
+				// Reset the selection
 				store.selectedCategory = null;
-				await getProduct("All");
+				store.product = null;
 			} else {
 				// Show products for the selected category
 				store.selectedCategory = category_selected;
